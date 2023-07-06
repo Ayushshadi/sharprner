@@ -10,3 +10,14 @@ for(var i=0;i<list.length;i++)
 {
     list[i].style.fontWeight='bold';
 }
+var list=document.querySelector('.list-group-item:nth-child(2)');
+list.style.backgroundColor='green';
+var list3=document.querySelector('.list-group-item:nth-child(3)');
+//list3.style.visibility='hidden';
+var odd=document.querySelectorAll('li:nth-child(odd)');
+var even=document.querySelectorAll('li:nth-child(even)');
+for(var i=0;i<odd.length;i++)
+{
+    odd[i].style.backgroundColor='red';
+    even[i].style.backgroundColor='blue';
+}
