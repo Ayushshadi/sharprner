@@ -1,11 +1,15 @@
 var form = document.getElementById('addForm');
 var itemlist=document.getElementById('items');
+var filter=document.getElementById('filter');
 
 //submit button click hone ke bade wala event
 form.addEventListener('submit',additem);
 
 //item delete karna hai
 itemlist.addEventListener('click',removeitem);
+
+//filter ke liye func call karna hoga
+filter.addEventListener('keyup', filteritem);
 
 //add fuction
 function additem(e)
@@ -51,4 +55,27 @@ function removeitem(e)
             itemlist.removeChild(li);
         }
     }
+}
+function filteritem(e)
+{
+    //text lena hoga user ka
+    var text =e.target.value.toLowerCase();
+
+    //list  lene hoge items compare karne ke liye
+    var items = itemlist.getElementsByTagName('li');
+
+    //convert karna hoga array m
+    Array.from(items).forEach(function(item)
+    {
+        //jo items present hai vo check karna hoga
+        var itemname= item.firstChild.textContent;
+        if(itemname.toLowerCase().indexOf(text)!=-1)
+        {
+            item.style.display='block';
+        }
+        else
+        {
+            item.style.display='none';
+        }
+    });
 }
