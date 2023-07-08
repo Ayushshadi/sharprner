@@ -19,5 +19,13 @@ function test(e)
             var child= document.createElement('li');
             child.textContent=userdata.uname+' '+userdata.umail+' '+userdata.unum;
             parr.appendChild(child);
+             var delbtn=document.createElement('button');
+            delbtn.style.backgroundColor='red';
+            delbtn.textContent='X';
+            delbtn.addEventListener('click',function(){
+                child.style.display='none';
+                localStorage.removeItem(userdata.umail);
+            });
+            child.appendChild(delbtn);
         }
 }   
