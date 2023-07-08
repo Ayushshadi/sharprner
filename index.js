@@ -10,3 +10,13 @@ localStorage.setItem('mail',e);
 localStorage.setItem('number',nu);
 
 }
+const emp = {
+    age: 26,
+    firstName: "Yash",
+    lastName: "Prasad"
+}
+let obj=JSON.stringify(emp);
+localStorage.setItem('obj',obj);    
+
+let geet = JSON.parse(localStorage.getItem('obj'));
+console.log(geet);
