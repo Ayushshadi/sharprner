@@ -64,7 +64,10 @@ deletebtn.appendChild(document.createTextNode('X'));
 li.appendChild(deletebtn);
 deletebtn.addEventListener('click',function(){
     li.style.display='none';
-   //localStorage.removeItem(userdata.m);
+       axios
+    .delete("https://crudcrud.com/api/36ffa99187d64437acf27a517be9508c/appointment/"+userdata._id)
+    .then(res=>alert('done'))
+    .catch(err=>console.log(err));
 });
 var editbtn=document.createElement('button');
 
