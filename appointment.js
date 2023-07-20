@@ -82,7 +82,10 @@ document.getElementById('name').value=userdata.na;
 document.getElementById('email').value=userdata.m;
 document.getElementById('number').value=userdata.no;
 li.style.display='none';
-//localStorage.removeItem(userdata.m);
+ axios
+    .delete("https://crudcrud.com/api/36ffa99187d64437acf27a517be9508c/appointment/"+userdata._id)
+    .then(res=>alert('done'))
+    .catch(err=>console.log(err));
 });
 //delete btn ko li m add karna hai
 li.appendChild(editbtn);
